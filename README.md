@@ -1,7 +1,7 @@
 kirby-panoramio
 ===============
 
-A plugin for [Kirby](http://getkirby.com/) that makes it easy to include Panoramio photos in your templates.
+A plugin for [Kirby](http://getkirby.com/) that makes it easy to include geolocated Panoramio photos in your templates.
 
 To install, put `panoramio.php` in your `/site/plugins` folder.
 
