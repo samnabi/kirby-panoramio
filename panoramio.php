@@ -1,24 +1,4 @@
-<? function panoramio($location = 'world', $set = 'public', $qty = '20', $size = 'medium', $mapfilter = 'false'){
-
-	// Translate $location to a bounding box of coordinates
-	if($location == 'world'){
-		$minx = -180;  	// 180 degrees West (International date line)
-		$maxx = 180;  	// 180 degrees East (International date line)
-		$miny = -90;  	// 90 degrees South (South pole)
-		$maxy = 90;  	// 90 degrees North (North pole)
-	}
-	else {
-		// Use Open Street Map's Nominatim to get the coordinates
-		$geo_query = json_decode(file_get_contents('http://nominatim.openstreetmap.org/search?q='.urlencode($location).'&format=json&polygon=1'));
-		foreach ($geo_query[0]->polygonpoints as $point){
-			$pointsx[] = $point[0];
-			$pointsy[] = $point[1];
-		}
-		$minx = min($pointsx);
-		$maxx = max($pointsx);
-		$miny = min($pointsy);
-		$maxy = max($pointsy);
-	}
+<? function panoramio($minx = -180, $maxx = 180, $miny = -90, $maxy = 90, $set = 'public', $qty = '20', $size = 'medium', $mapfilter = 'false'){
 
 	// Get the photos from panoramio. Limit per query is 100 photos, so we have to split it up.
 	$photos = array();

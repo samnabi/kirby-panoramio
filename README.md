@@ -12,7 +12,10 @@ Use it like this:
 
 There are a few variables. Here's a rundown (see the [Panoramio API docs](http://www.panoramio.com/api/data/api.html) for more details):
 
-    $location    Plain-text description of the place (e.g. 'Key Largo' or 'Skåne')
+    $minx        Coordinates of the desired bounding box, in decimal degrees.
+    $maxx        For worldwide, use -180, 180, -90, and 90.
+    $miny        
+    $maxy       
 
     $set         The photoset to draw from. Accepted values are:
                  'public' (popular photos)
